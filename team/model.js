@@ -6,7 +6,7 @@ const Team = db.define(
   {
     name: {
       type: Sequelize.STRING,
-      // defines name of column in db table
+      // defines name of column in db table:
       field: 'team_name'
     }
   },
