@@ -5,7 +5,7 @@ const databaseUrl = process.env.DATABASE_URL || 'postgres://postgres:himitsu@loc
 const db = new Sequelize(databaseUrl)
 
 db.sync()
-  .then(() => console.log(`updated database (running on ${databaseUrl}`))
+  .then(() => console.log(`updated database \n Running on  ${databaseUrl}`))
   .catch(console.error)
 
 module.exports = db
