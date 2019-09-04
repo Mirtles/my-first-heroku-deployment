@@ -9,10 +9,23 @@ router.get(
     Team.findAll()
       .then(teams => {
         console.log(teams.map(team => team.name))
-        res.send(`All teams: ${teams.map(team=>team.name)}`)
+        res.send(`All teams: ${teams.map(team => team.name)}`)
       })
       .catch(error => next(error)
       )
+  }
+)
+
+router.get(
+  '/team/:id',
+  (req, res, next) => {
+    // find by primary key
+    Team.findByPk(req.params.id)
+      .then(team => {
+        console.log("Team name:", team.name)
+        res.send(team)
+      })
+      .catch(error => next(error))
   }
 )
 
